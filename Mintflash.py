@@ -12,65 +12,65 @@ role = st.selectbox("Choose your position:", ["All", "Free Safety (FS)", "Strong
 topic_flashcards = {
     "MINT Package": [
         {
-            "term": "Base MINT Alignment",
-            "definition": "In a standard MINT look, safeties are deep—around 10 to 12 yards. FS is to the field, SS to the boundary. Think 2-high shell, disguise-ready.",
+            "term": "Now we're going to talk about your starting alignment in MINT.",
+            "definition": "In a standard MINT front, you’re aligning around 10 to 12 yards off the ball. FS plays to the field, SS lines up to the boundary. Keep it clean, look like two-high pre-snap—it gives the QB something to think about.",
             "role": "All"
         },
         {
-            "term": "Motion Adjustments in MINT",
-            "definition": "If there’s motion, communicate. STAR bumps, SS might spin down, and FS may rotate into Thin or Cloud depending on the call.",
+            "term": "Let’s go over what to do when the offense motions.",
+            "definition": "Motion is a communication test. When #2 or #3 shifts, STAR bumps, SS may spin down, and FS might rotate into Cloud or Thin coverage. The key: talk it out and adjust as a unit.",
             "role": "All"
         },
         {
-            "term": "Coverage Responsibility - FS",
-            "definition": "You’re reading #2 to the field. Vertical? Stay on top. Inside break? Be ready to close. Eliminate the deep threat.",
+            "term": "Now let’s focus on what FS is reading.",
+            "definition": "Your eyes are on #2 to the field. If he goes vertical, you stay on top. If he breaks in, close and take away the window. You’re the last line, but you can also be the playmaker.",
             "role": "Free Safety (FS)"
         },
         {
-            "term": "Coverage Responsibility - SS",
-            "definition": "You’re the hammer on the boundary. Watch #2 to #1 and rotate into curl/flat or the box—especially in Trap, Robber, or Buzz.",
+            "term": "Strong Safety, this one’s for you.",
+            "definition": "You’re the boundary enforcer. Track #2 to #1. Your job? Own the curl/flat or insert down into the box. Trap, Robber, Buzz—know your fit and bring the hammer.",
             "role": "Strong Safety (SS)"
         },
         {
-            "term": "MINT Check: Empty",
-            "definition": "If the offense shows Empty, check out of MINT. STAR or SS might flex wide to pick up #3. It’s about handling quick threats.",
+            "term": "Let’s talk about what happens if they go Empty.",
+            "definition": "Empty formation means quick threats. In MINT, you may check out entirely. SS might flex wide to pick up #3. The goal: cover space fast and deny the first read.",
             "role": "Strong Safety (SS)"
         },
         {
-            "term": "MINT vs 3x1",
-            "definition": "Trips to the field? FS drifts over the top. SS stays boundary side. You may hear a Push call to balance it out.",
+            "term": "How do we handle a 3x1 set? Let’s walk through it.",
+            "definition": "Trips to the field? FS cheats that way over the top, SS stays strong on the backside. You may hear a 'Push' or 'Roll' to balance the coverage. Keep your eyes active and communicate.",
             "role": "Free Safety (FS)"
         }
     ],
     "Coverage Basics": [
         {
-            "term": "Cover 1 Basics",
-            "definition": "Man coverage underneath with a single high safety (FS) in the post. SS often has TE or helps in the low hole zone.",
+            "term": "Now we're going to cover Cover 1.",
+            "definition": "This is man across the board with FS in the post. SS might be in man against the tight end or helping as a low-hole player. Play it tight, and trust your leverage.",
             "role": "All"
         },
         {
-            "term": "Cover 2 Vision",
-            "definition": "Split safeties over deep halves. FS and SS need to break on corner routes and verticals—especially against Smash or Verts.",
+            "term": "Next up: Cover 2 and your deep halves.",
+            "definition": "You and your counterpart are splitting the deep field. Be ready to break on corners and posts. Recognize Smash and Verts—those are your money reads.",
             "role": "All"
         },
         {
-            "term": "Robber Concept",
-            "definition": "SS drops into an intermediate zone. Eyes on the QB to jump crossing routes. High risk, high reward.",
+            "term": "Let’s talk about Robber coverage for SS.",
+            "definition": "In Robber, you’re dropping into the short middle, tracking crossing routes and looking to jump passes. It’s aggressive—commit when you’re sure.",
             "role": "Strong Safety (SS)"
         },
         {
-            "term": "Cloud Coverage",
-            "definition": "Corner drops to the flat. FS shades over #1 or #2 based on route. Be ready to bracket or jump a corner route.",
+            "term": "FS, let’s go over Cloud Coverage.",
+            "definition": "With Cloud, the corner plays flat. You’re over the top of #1 or bracketing with the STAR or backer. Don’t let anything leak.",
             "role": "Free Safety (FS)"
         },
         {
-            "term": "Route Recognition: Smash",
-            "definition": "#1 runs hitch, #2 goes corner. In Cover 2, FS or SS must break quickly on the corner to prevent big gains.",
+            "term": "Now let’s recognize a common offensive concept: Smash.",
+            "definition": "#1 runs a short hitch, #2 runs a corner. In Cover 2, you’re breaking on that corner route hard. Know it when you see it.",
             "role": "All"
         },
         {
-            "term": "Check: Red",
-            "definition": "Run fit check. If offense motions to trips or bunch, SS may rotate down to the box to balance numbers.",
+            "term": "SS, this one’s a check you’ll need in your pocket.",
+            "definition": "‘Check Red’ means fit the run when they motion to trips or tight bunch sets. Drop down, help the box, and close space quickly.",
             "role": "Strong Safety (SS)"
         }
     ]
@@ -109,6 +109,7 @@ with col2:
         st.session_state.card_index = (st.session_state.card_index + 1) % len(filtered)
 
 st.caption("Choose an install topic and your position to review key flashcards. More topics coming soon!")
+
 
 
 
