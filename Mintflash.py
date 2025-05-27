@@ -21,7 +21,7 @@ flashcards_by_phase = {
     # full expanded card content here (already discussed)
     # abbreviated here for clarity
     "Phase 1: Core Structure & Personnel": [
-        {"term": "Now we’re going to talk about the MINT Front.", "definition": "The MINT front is a 3-4 defensive structure using a 4i-0-4i front and a stand-up JACK on the edge. It’s built to handle spread formations while defending the run.", "role": "All"},
+        {"term": "What is MINT Front?", "definition": "The MINT front is a 3-4 defensive structure using a 4i-0-4i front and a stand-up JACK on the edge. It’s built to handle spread formations while defending the run.", "role": "All"},
         {"term": "What does 4i-0-4i mean?", "definition": "It refers to the alignment of the defensive linemen: both ends line up on the inside shoulder of the offensive tackles (4i), and the nose tackle is head-up on the center (0).", "role": "All"},
         {"term": "Who is the JACK and what’s their job?", "definition": "The JACK is a hybrid edge player—part linebacker, part defensive end. They line up outside the tackle and are responsible for setting the edge or rushing the passer.", "role": "All"},
         {"term": "How does the MINT front help against the run?", "definition": "It lets you keep a light box (only 5 defenders) while still covering interior gaps soundly. This frees up the secondary for pass coverage without giving up run integrity.", "role": "All"},
