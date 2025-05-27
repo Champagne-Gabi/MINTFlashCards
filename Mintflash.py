@@ -31,6 +31,10 @@ flashcards_by_phase = {
 all_cards = flashcards_by_phase[phase]
 filtered = [f for f in all_cards if role == "All" or f["role"] == role or f["role"] == "All"]
 
+if not filtered:
+    st.warning("No flashcards available for this role in the selected phase.")
+    st.stop()
+
 # Flashcard navigation state
 if "card_index" not in st.session_state:
     st.session_state.card_index = 0
@@ -62,5 +66,6 @@ with col2:
             st.session_state.card_index += 1
 
 st.caption("Select a phase of learning, your role, and work through the key install concepts step-by-step.")
+
 
 
