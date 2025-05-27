@@ -5,7 +5,7 @@ st.set_page_config(page_title="Safety Flashcards - MINT Package", layout="center
 st.title("📱 Safety Flashcards")
 
 # Topic and Role selectors
-topic = st.selectbox("Select Install Topic:", ["MINT Package", "Coverage Basics"])
+topic = st.selectbox("Select Install Topic:", ["MINT Package", "Coverage Basics", "Day 1 Terminology Overview"])
 role = st.selectbox("Choose your position:", ["All", "Free Safety (FS)", "Strong Safety (SS)"])
 
 # Define flashcards by topic
@@ -73,6 +73,33 @@ topic_flashcards = {
             "definition": "‘Check Red’ means fit the run when they motion to trips or tight bunch sets. Drop down, help the box, and close space quickly.",
             "role": "Strong Safety (SS)"
         }
+    ],
+    "Day 1 Terminology Overview": [
+        {
+            "term": "Let’s go over what 'MINT' means.",
+            "definition": "MINT is a defensive front featuring a 4i-0-4i alignment with a Jack or hybrid player standing outside. It’s used to defend spread formations while maintaining run integrity.",
+            "role": "All"
+        },
+        {
+            "term": "What’s the role of the STAR?",
+            "definition": "The STAR is your nickel back—part linebacker, part corner. He handles slot receivers and adjusts with motion. Big communicator in MINT calls.",
+            "role": "All"
+        },
+        {
+            "term": "Know this: 'Spin', 'Roll', and 'Cloud' calls.",
+            "definition": "'Spin' often means safety rotation. 'Roll' is a coverage shift to a side. 'Cloud' involves the corner playing underneath zone while safety helps over top.",
+            "role": "All"
+        },
+        {
+            "term": "Let’s talk about route identifiers.",
+            "definition": "#1 = the outside WR, #2 = the slot, #3 = the inside (usually RB or TE). You’ll hear a lot about reading #2’s release—vertical, in, or out.",
+            "role": "All"
+        },
+        {
+            "term": "Key check: what does 'Push' mean?",
+            "definition": "Push is a call to shift defenders toward trips formations. It balances out responsibilities to keep coverage intact versus overloaded sides.",
+            "role": "All"
+        }
     ]
 }
 
@@ -109,6 +136,7 @@ with col2:
         st.session_state.card_index = (st.session_state.card_index + 1) % len(filtered)
 
 st.caption("Choose an install topic and your position to review key flashcards. More topics coming soon!")
+
 
 
 
