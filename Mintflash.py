@@ -42,25 +42,10 @@ flashcards_by_phase = {
         {"term": "Know this: 'Spin', 'Roll', and 'Cloud' calls.", "definition": "'Spin' often means safety rotation. 'Roll' is a coverage shift to a side. 'Cloud' involves the corner playing underneath zone while safety helps over top.", "role": "All"},
         {"term": "Let’s talk about route identifiers.", "definition": "#1 = the outside WR, #2 = the slot, #3 = the inside (usually RB or TE). You’ll hear a lot about reading #2’s release—vertical, in, or out.", "role": "All"},
         {"term": "Key check: what does 'Push' mean?", "definition": "Push is a call to shift defenders toward trips formations. It balances out responsibilities to keep coverage intact versus overloaded sides.", "role": "All"},
-        {"term": "SS, this one’s a check you’ll need in your pocket.", "definition": "‘Check Red’ means fit the run when they motion to trips or tight bunch sets. Drop down, help the box, and close space quickly.", "role": "Strong Safety (SS)"}
+        {"term": "SS, this one’s a check you’ll need in your pocket.", "definition": "‘Check Red’ means fit the run when they motion to trips or tight bunch sets. Drop down, help the box, and close space quickly.", "role": "Strong Safety (SS)"},
+        {"term": "Great job! You’ve completed Day 1’s flashcards.", "definition": "Feel free to review any phase again, or check back soon for Day 2 installation content!", "role": "All"}
     ]
 }
-
-# Append 'Next Phase' card to the end of each phase (except the last)
-for i, p in enumerate(phase_options[:-1]):
-    next_phase = phase_options[i + 1]
-    flashcards_by_phase[p].append({
-        "term": f"Next: Select {next_phase} to continue learning.",
-        "definition": f"You’ll learn about what’s covered in {next_phase.lower()}.",
-        "role": "All"
-    })
-
-# Final message card for last phase
-flashcards_by_phase[phase_options[-1]].append({
-    "term": "Great job! You’ve completed Day 1’s flashcards.",
-    "definition": "Feel free to review any phase again, or check back soon for Day 2 installation content!",
-    "role": "All"
-})
 
 # Get current phase's cards and filter by role
 all_cards = flashcards_by_phase[phase]
@@ -95,10 +80,6 @@ with col2:
     if st.button("Next ➡️"):
         if st.session_state.card_index < len(filtered) - 1:
             st.session_state.card_index += 1
-        else:
-            current_index = phase_options.index(phase)
-            if current_index < len(phase_options) - 1:
-                st.session_state.card_index = 0
-                st.experimental_set_query_params(**{"Learning Phase": phase_options[current_index + 1]})
 
 st.caption("Select a phase of learning, your role, and work through the key install concepts step-by-step.")
+
