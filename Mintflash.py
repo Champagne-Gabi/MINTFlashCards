@@ -77,7 +77,12 @@ topic_flashcards = {
     "Day 1 Terminology Overview": [
         {
             "term": "Let’s go over what 'MINT' means.",
-            "definition": "MINT is a defensive front featuring a 4i-0-4i alignment with a Jack or hybrid player standing outside. It’s used to defend spread formations while maintaining run integrity.",
+            "definition": "MINT is a defensive front used primarily against spread formations. You’ll see 4i–0–4i alignments across the line, with a Jack or hybrid edge player outside. It lets us keep two high safeties while still defending the run with numbers.",
+            "role": "All"
+        },
+        {
+            "term": "What type of defense is MINT typically run out of?",
+            "definition": "MINT is most commonly used in a 3-4 defensive structure, often paired with nickel personnel (that’s five defensive backs). It gives us the flexibility to cover modern spread offenses without sacrificing physicality in the box.",
             "role": "All"
         },
         {
@@ -136,9 +141,3 @@ with col2:
         st.session_state.card_index = (st.session_state.card_index + 1) % len(filtered)
 
 st.caption("Choose an install topic and your position to review key flashcards. More topics coming soon!")
-
-
-
-
-
-
