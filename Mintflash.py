@@ -39,10 +39,7 @@ if st.session_state.card_index >= len(filtered):
 
 current = filtered[st.session_state.card_index]
 
-# Flashcard tracker display
-card_num = st.session_state.card_index + 1
-card_total = len(filtered)
-st.markdown(f"<div style='text-align: center; font-size: 16px; color: gray;'>Card {card_num} of {card_total}</div>", unsafe_allow_html=True)
+
 
 # Phone-style container
 st.markdown(f"""
@@ -65,4 +62,5 @@ with col2:
             st.session_state.card_index += 1
 
 st.caption("Select a phase of learning, your role, and work through the key install concepts step-by-step.")
+
 
