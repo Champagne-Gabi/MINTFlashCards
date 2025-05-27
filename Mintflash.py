@@ -3,47 +3,62 @@ from PIL import Image
 
 st.set_page_config(page_title="Safety Flashcards - MINT Package", layout="centered")
 
-st.title("📱 Flashcards: MINT Package for Safeties")
+st.title("📱 Flashcards: MINT Package – Safeties")
 
-# Define flashcards for MINT package (Safeties only)
+# Role selector
+role = st.selectbox("Choose your position:", ["All", "Free Safety (FS)", "Strong Safety (SS)"])
+
+# Define flashcards
 flashcards = [
     {
         "term": "Base MINT Alignment",
-        "definition": "In a standard MINT look, your safeties are gonna be deep—like 10 to 12 yards. FS lines up to the field, SS to the boundary. Think 2-high shell, ready to disguise or rotate based on what the offense gives you.",
-        "image": None
+        "definition": "In a standard MINT look, safeties are deep—around 10 to 12 yards. FS is to the field, SS to the boundary. Think 2-high shell, disguise-ready.",
+        "image": "A_digital_flashcards-style_interface_tailored_for_.png",
+        "role": "All"
     },
     {
         "term": "Motion Adjustments in MINT",
-        "definition": "If the offense sends motion, you’ve gotta be loud and clear. STAR might bump out, SS could spin down, and FS has to be ready to rotate depending on what coverage check you’re in—like Cloud or Thin.",
-        "image": None
+        "definition": "If there’s motion, communicate. STAR bumps, SS might spin down, and FS may rotate into Thin or Cloud depending on the call.",
+        "image": "A_digital_flashcards-style_interface_tailored_for_.png",
+        "role": "All"
     },
     {
         "term": "Coverage Responsibility - FS",
-        "definition": "You’re reading #2 to the field. If he goes vertical? You stay on top. Inside break? Prepare to help inside. Your job is to erase the deep threat and support wherever the route breaks down.",
-        "image": None
+        "definition": "You’re reading #2 to the field. Vertical? Stay on top. Inside break? Be ready to close. Eliminate the deep threat.",
+        "image": "A_digital_flashcards-style_interface_tailored_for_.png",
+        "role": "Free Safety (FS)"
     },
     {
         "term": "Coverage Responsibility - SS",
-        "definition": "You’re the enforcer on the boundary. Watch #2 to #1 and be ready to rotate into the curl/flat or the box, depending on the call—Trap, Robber, or Buzz might be coming your way.",
-        "image": None
+        "definition": "You’re the hammer on the boundary. Watch #2 to #1 and rotate into curl/flat or the box—especially in Trap, Robber, or Buzz.",
+        "image": "A_digital_flashcards-style_interface_tailored_for_.png",
+        "role": "Strong Safety (SS)"
     },
     {
         "term": "MINT Check: Empty",
-        "definition": "Offense lines up in Empty? Get ready to check out of MINT—probably into something like Play Out. STAR or SS might need to flex wide to take away that #3 quick game threat.",
-        "image": None
+        "definition": "If the offense shows Empty, check out of MINT. STAR or SS might flex wide to pick up #3. It’s about handling quick threats.",
+        "image": "A_digital_flashcards-style_interface_tailored_for_.png",
+        "role": "Strong Safety (SS)"
     },
     {
         "term": "MINT vs 3x1",
-        "definition": "Trips to the field? FS has to lean that way, usually over the top. SS stays to the boundary. You might hear a Push call to adjust who’s helping where.",
-        "image": None
+        "definition": "Trips to the field? FS drifts over the top. SS stays boundary side. You may hear a Push call to balance it out.",
+        "image": "A_digital_flashcards-style_interface_tailored_for_.png",
+        "role": "Free Safety (FS)"
     }
 ]
+
+# Filter by role
+filtered = [f for f in flashcards if role == "All" or f["role"] == role or f["role"] == "All"]
 
 # Flashcard state
 if "card_index" not in st.session_state:
     st.session_state.card_index = 0
 
-current = flashcards[st.session_state.card_index]
+if st.session_state.card_index >= len(filtered):
+    st.session_state.card_index = 0
+
+current = filtered[st.session_state.card_index]
 
 # Phone-style container
 st.markdown("""
@@ -54,7 +69,6 @@ st.markdown("""
     <br>
 """.format(current["term"], current["definition"]), unsafe_allow_html=True)
 
-# Show image if available
 if current.get("image"):
     st.image(Image.open(current["image"]), caption="Diagram", use_column_width=True)
 
@@ -62,11 +76,12 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     if st.button("⬅️ Previous"):
-        st.session_state.card_index = (st.session_state.card_index - 1) % len(flashcards)
+        st.session_state.card_index = (st.session_state.card_index - 1) % len(filtered)
 
 with col2:
     if st.button("Next ➡️"):
-        st.session_state.card_index = (st.session_state.card_index + 1) % len(flashcards)
+        st.session_state.card_index = (st.session_state.card_index + 1) % len(filtered)
 
-st.caption("Tap through to review key safety concepts from the MINT package. Diagrams coming soon!")
+st.caption("Use the selector above to study FS or SS responsibilities. Tap through the flashcards and review diagrams!")
+
 
